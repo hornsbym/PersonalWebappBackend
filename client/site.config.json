@@ -1,0 +1,10 @@
+{
+    "apps" : [
+      {
+        "name"      : "new_website",
+        "script"    : "npm start",
+        "interpreter": "none",
+        "args": "serve -p 8443 -T"
+      }
+    ]
+  }
