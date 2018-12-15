@@ -1,0 +1,183 @@
+* {
+    background: transparent;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#profile{
+    border-radius: 50%;
+    width: 30%;
+}
+
+.projectImage{
+    margin:1%;
+    border: 7px solid  #87cefa;
+}
+
+#name{
+    font-size: 3rem;
+}
+
+#bio {
+    font-size: 1.5rem;
+}
+
+.HideButton {
+    display:block;
+    position: fixed;
+    margin-top:1%;
+    height:100%;
+}
+
+#HideButton {
+    height:170px;
+    width: 30px;
+    font-weight:bold;
+    border-radius:17%;
+    margin-left:1%;
+    background-color: #00bfff;
+    box-shadow:none;
+    border: 0;}
+
+.Header {
+    margin: 2%;
+    text-align: center;
+}
+
+.projectLink {
+    font-size: 1.5rem;
+    color:blue;
+    font-weight: bold;
+}
+
+.Navbar {
+    font-size:1.5rem;
+    margin-top:1%;
+    margin-right:0%;
+    margin-left:.5%;
+    display: block;
+    list-style-type: none;
+    background-color: #00bfff;
+    width:25%;
+    height: inherit;
+    position: fixed;
+    overflow: auto; 
+}
+
+.storyPreview{
+    text-align:left;
+    font-weight:normal;
+    margin:1%;
+}
+
+.storyButton {
+    padding: 1%;
+    font-weight:bold;
+    border-radius:10%;
+    margin-left:1%;
+    background-color: #00bfff;
+    box-shadow:none;
+    border: 0;
+}
+
+.navbar{
+    display: inline-block;
+}
+
+.HideButton{
+    padding-left: 0%;
+    display: inline-block;
+    height: inherit;
+}
+
+.Email{
+    margin: 4%;
+    font-size: 1.5rem;
+}
+
+.navbarItem .navbarLink {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    height: inherit;
+}
+
+.Body {
+    margin: 2%;
+    margin-top:0%;
+    margin-right:0%;
+    padding-left:1%;
+    margin-left:26%;
+    float: left;
+}
+
+.PDFViewer{
+    margin: 4%;
+}
+
+#PDFViewer{
+    width: 0px;
+    height:0px;
+}
+
+.Contact{
+    margin: 4%;
+    font-size: 1.5rem;
+}
+
+.Programming{
+    text-align: center;
+    margin: 2%;
+}
+
+.Writing {
+    font-weight:bold;
+    text-align: center;
+    margin: 2%;
+}
+
+.Story {
+    border:1px solid black;
+    padding:1%;
+    margin: 2%;
+    font-size:1.25rem;
+}
+
+.Project {
+    margin: 2%;
+    text-align: center;
+}
+
+#emailSender {
+    margin-left:1%;
+    height: 1rem;
+    width:25%;
+    resize: none;
+}
+
+#emailMessage {
+    margin-left:1%;
+    width: 75%;
+    height: 10rem;
+    resize:none;
+}
+
+.storyTitle {
+    font-weight:"bold";
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#sendButton {
+    padding: 1%;
+    font-weight:bold;
+    border-radius:10%;
+    margin-left:1%;
+    background-color: #00bfff;
+    box-shadow:none;
+    border: 0;
+}
