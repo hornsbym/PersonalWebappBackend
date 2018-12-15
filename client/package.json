@@ -14,7 +14,7 @@
     "eject": "react-scripts eject",
     "server": "cd .. && cd react-backend && node bin/www"
   },
-  "proxy": "http://142.93.118.50",
+  "proxy": "142.93.118.50",
   "eslintConfig": {
     "extends": "react-app"
   },
