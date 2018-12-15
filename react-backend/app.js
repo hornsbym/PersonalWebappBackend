@@ -46,7 +46,13 @@ app.use(function(err, req, res, next) {
 });
 
 //////
-app.get('*', (req, res)=>{
+app.get('/', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
+app.get('/sendEmail', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
+app.get('/getFile', (req, res)=>{
   res.sendFile(path.join(__dirname, '../build/index.html'));
 })
 
