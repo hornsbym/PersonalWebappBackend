@@ -12,9 +12,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "cd .. && cd react-backend && set PORT=3001 && node bin/www"
+    "server": "cd .. && cd react-backend && node bin/www"
   },
-  "proxy": "http://localhost:3001",
+  "proxy": "http://142.93.118.50",
   "eslintConfig": {
     "extends": "react-app"
   },
