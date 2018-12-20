@@ -31,22 +31,26 @@ class Project extends Component {
                 console.log(this.state.location,data)
                 var buffer = new Buffer(data)
                 this.setState({buffer:buffer})
-                this.displayPicture()
-            });
+                this.displayPicture()})
+            .then(data => this.resizePicture());
     }
 
     displayPicture = () =>{
         var b64encoded = btoa(String.fromCharCode.apply(null, this.state.buffer));
         var datajpg = "data:image/jpg;base64," + b64encoded;
         document.getElementById(this.state.id).src = datajpg;
-        
+        this.resizePicture()
+    }
+    
+
+    resizePicture = () => {
         var imageWidth = document.getElementById(this.state.id).clientWidth
         var screenWidth = window.screen.availWidth
+        console.log("id:",this.state.id, "-- width:",imageWidth,"-- 60%:",screenWidth*.6)
         if (imageWidth > screenWidth*.6){
             document.getElementById(this.state.id).setAttribute("width","60%")
-        }
-            
     }
+}
 
     render() {
         return (
