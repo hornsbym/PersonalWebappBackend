@@ -39,13 +39,20 @@ class Project extends Component {
         var b64encoded = btoa(String.fromCharCode.apply(null, this.state.buffer));
         var datajpg = "data:image/jpg;base64," + b64encoded;
         document.getElementById(this.state.id).src = datajpg;
+        
+        var imageWidth = document.getElementById(this.state.id).clientWidth
+        var screenWidth = window.screen.availWidth
+        if (imageWidth > screenWidth*.6){
+            document.getElementById(this.state.id).setAttribute("width","60%")
+        }
+            
     }
 
     render() {
         return (
             <div className="Project">
                 <a className = "projectLink" href={this.state.link}>{this.props.title}</a>
-                <div>
+                <div className = "imageContainer" id = {"c"+this.state.id}>
                     <img className = "projectImage" id = {this.state.id} />
                 </div>
                 
