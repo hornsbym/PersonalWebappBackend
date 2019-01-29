@@ -10,14 +10,16 @@ import PDFViewer from "./PDFViewer"
 class Body extends Component {
     render(){
         return(
-            <div className="Body" id="Body">
+            <div id="buttonAndBody">
                 <HideButton/>
-                <Header/>
-                <Programming/>
-                <PDFViewer/>
-                <Writing/>
-                <Contact/>
-                <EmailWidget/>
+                <div className="Body" id="Body">
+                    <Header/>
+                    <Programming/>
+                    <PDFViewer/>
+                    <Writing/>
+                    <Contact/>
+                    <EmailWidget/>
+                </div>
             </div>
         )
     }

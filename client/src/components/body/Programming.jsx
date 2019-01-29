@@ -19,8 +19,13 @@ class Programming extends Component{
             var title = content.projects[i].title;
             var location = content.projects[i].location;
             var link = content.projects[i].link;
+            
+            var pictureLocations  = []
+            for(var n = 0; n < location.length; n++){
+                pictureLocations.push(location[n])
+            }
         
-            var project = <Project title={title} location={location} link={link} id={"p"+i}/>
+            var project = <Project title={title} pictureLocations={pictureLocations} link={link} id={"p"+i}/>
             this.addProject(project)
         }
     }

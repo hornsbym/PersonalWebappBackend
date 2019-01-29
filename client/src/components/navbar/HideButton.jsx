@@ -4,8 +4,8 @@ class HideButton extends Component{
     constructor(props){
         super(props);
         this.state = {
-            clicked: false,
-            symbol: " < "
+            clicked: true,
+            symbol: " > "
         }
     }
 
@@ -13,16 +13,12 @@ class HideButton extends Component{
         var nav;
         var body;
         nav = document.getElementById("Navbar")
-        body = document.getElementById("Body")
-        console.log(nav)
+        body = document.getElementById("buttonAndBody")
         if (this.state.clicked == true){
-            console.log("Showing menu")
-            nav.style.width = "25%"
-            body.style.marginLeft = '26%'
-            nav.style.border = 'solid black 1px'
+            nav.style.width = "15%"
+            body.style.marginLeft = "19%"
             this.setState({clicked: false, symbol: " < "})
         } else {
-            console.log("Hiding menu")
             nav.style.width = "0%"
             body.style.marginLeft = '0%'
             nav.style.border = '0px'

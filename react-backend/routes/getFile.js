@@ -5,10 +5,10 @@ const AWS = require('aws-sdk')
 router.post('/', function (req, res) {
   const target = req.body.location;
   const s3 = new AWS.S3();
-  console.log('Getting file from', target)
 
-  const params = {  // Contains information about the file to be searched for.
-    Bucket: "hornsbym.github.io-resources",  // Where the file should be looked for; defined in serverless.yml.
+  // Contains information about the file to be searched for.
+  const params = {  
+    Bucket: "hornsbym.github.io-resources",
     Key: target  // The name of the file to be searched for.
   };
 
@@ -17,7 +17,6 @@ router.post('/', function (req, res) {
       console.log(err, err.stack)
     } 
     else {
-      console.log(data.Body)
       res.send(data.Body.toJSON()) 
     };
   });

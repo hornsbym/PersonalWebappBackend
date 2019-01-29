@@ -2,27 +2,27 @@
     "projects": [
         {
             "title": "Knight Fight",
-            "location": "knightfight.jpg",
+            "location": ["knightfight.jpg"],
             "link": "https://github.com/hornsbym/KnightFight"
         },
         {
             "title": "Calculator App",
-            "location": "calculatorapp.jpg",
+            "location": ["calculatorapp.jpg"],
             "link": "https://github.com/hornsbym/Calculator"
         },
         {
             "title": "Free Cell",
-            "location": "freecell.jpg",
+            "location": ["freecell1.jpg"],
             "link": "https://github.com/hornsbym/FreeCell"
         },
         {
             "title": "The Thing",
-            "location": "thethingtui.jpg",
+            "location": ["thethingtui.jpg"],
             "link": "https://github.com/hornsbym/TheThing.git"
         },
         {
             "title": "The Thing (With GUI)",
-            "location": "thethinggui.jpg",
+            "location": ["thethinggui.jpg"],
             "link": "https://github.com/hornsbym/GUIThing"
         } 
     ],

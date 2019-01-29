@@ -5,61 +5,76 @@ class Project extends Component {
         super(props);
         this.state = {
             id: `${this.props.id}`,
-            location: this.props.location,
-            link:this.props.link
+            pictureLocations: this.props.pictureLocations,
+            link: this.props.link,
+            buffers: []
         }
     }
 
-    componentWillMount(){
-        this.getPicture()
+    componentWillMount() {
+        this.gatherPictures()
     }
 
-    getPicture = () => {
-        var data = { location: this.state.location }
-
-        const params = {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
+    fetchPicture = (params, i) => {
 
         fetch('/getFile', params)
-            .then(res => res.json())
-            .then(data => {
-                console.log(this.state.location,data)
-                var buffer = new Buffer(data)
-                this.setState({buffer:buffer})
-                this.displayPicture()})
-            .then(data => this.resizePicture());
+        .then(res => res.json())
+        .then(data => {
+            var buffer = new Buffer(data)
+            this.setState({ buffers: [...this.state.buffers, buffer] })
+        })
+        .then(data => {
+            this.displayPicture(i)});
     }
 
-    displayPicture = () =>{
-        var b64encoded = btoa(String.fromCharCode.apply(null, this.state.buffer));
+    gatherPictures = () => {
+        console.log("pictureLocations:",this.state.pictureLocations)
+        for (var i = 0; i < this.state.pictureLocations.length; i++) {
+            console.log(this.state.id+" i:",i)
+            var data = { location: this.state.pictureLocations[i] }
+
+            const params = {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            
+            console.log(this.state.id+" fetching:", i, "\nData:",data)
+            this.fetchPicture(params, i)
+        }
+    }
+
+    displayPicture = (i) => {
+        var b64encoded = btoa(String.fromCharCode.apply(null, this.state.buffers[i]));
         var datajpg = "data:image/jpg;base64," + b64encoded;
-        document.getElementById(this.state.id).src = datajpg;
-        this.resizePicture()
-    }
-    
 
-    resizePicture = () => {
-        var imageWidth = document.getElementById(this.state.id).clientWidth
-        var screenWidth = window.screen.availWidth
-        console.log("id:",this.state.id, "-- width:",imageWidth,"-- 60%:",screenWidth*.6)
-        if (imageWidth > screenWidth*.6){
-            document.getElementById(this.state.id).setAttribute("width","60%")
+        var img = document.createElement("img")   // Creates an new image html element
+        var id  = this.state.id+"-"+i.toString()
+        img.setAttribute("class","projectImage") 
+        img.setAttribute("id",this.state.id+"-"+i.toString())
+
+        img.src = datajpg;                        // Puts the picture in the image element
+
+        document.getElementById("c"+this.state.id).appendChild(img) // Adds image element to document
+
     }
-}
+
+    resizePicture = (i) => {
+        var picture = document.getElementById(this.state.id+"-"+i.toString())
+        var imageWidth = picture.clientWidth
+        var screenWidth = window.screen.availWidth
+        if (imageWidth > screenWidth * .6) {
+            picture.setAttribute("width", "60%")
+        }
+    }
 
     render() {
         return (
             <div className="Project">
-                <a className = "projectLink" href={this.state.link}>{this.props.title}</a>
-                <div className = "imageContainer" id = {"c"+this.state.id}>
-                    <img className = "projectImage" id = {this.state.id} />
-                </div>
-                
+                <a className="projectLink" href={this.state.link}>{this.props.title}</a>
+                <div className="imageContainer" id={"c" + this.state.id}></div>
             </div>
         )
     }
