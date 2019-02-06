@@ -225,4 +225,8 @@
     .projectImage{
         max-width: 85%;
     }
+
+    .Body {
+        margin: 0px;
+    }
 }
