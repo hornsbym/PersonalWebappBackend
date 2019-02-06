@@ -105,7 +105,6 @@
     font-size: 1.5rem;
 }
 
-
 .navbarItem {
     display: inline-block;
     width: 100%;
@@ -221,5 +220,9 @@
     #bio {
         width:100%;
         margin-bottom: 2em;
+    }
+
+    .projectImage{
+        max-width: 85%;
     }
 }
