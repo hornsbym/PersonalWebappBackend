@@ -9,7 +9,7 @@
 
 #profile{
     border-radius: 50%;
-    /* width: 30%; */
+    max-width:75%;
 }
 
 .bioLine {
