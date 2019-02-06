@@ -38,8 +38,8 @@ class Header extends Component {
                 <div id="name">Mitchell Hornsby</div>
                 <img id="profile"></img>
                 <div id="bio">
-                        <div>Washington and Lee University Class of 2019</div>
-                        <div>Computer Science major/Creative Writing minor</div>
+                        <div className="bioLine">Washington and Lee University Class of 2019</div>
+                        <div className="bioLine">Computer Science major/Creative Writing minor</div>
                 </div>
             </div>
         )

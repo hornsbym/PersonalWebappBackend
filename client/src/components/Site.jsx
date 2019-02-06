@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Navbar from "./navbar/Navbar"
+import HideButton from "./navbar/HideButton"
 import Body from "./body/Body"
 
 class Site extends Component{
@@ -13,8 +14,13 @@ class Site extends Component{
     render(){
         return(
             <div className="Site">
-                <Navbar/>
-                <Body/>
+                <div id="navbarContainer">
+                    <Navbar/>
+                </div>
+                <HideButton/>
+                <div id="bodyContainer">
+                    <Body/>
+                </div> 
             </div>
         )
     }

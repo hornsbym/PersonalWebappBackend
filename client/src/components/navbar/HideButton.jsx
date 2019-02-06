@@ -5,32 +5,31 @@ class HideButton extends Component{
         super(props);
         this.state = {
             clicked: true,
-            symbol: " > "
+            symbol: " Menu "
         }
     }
 
     click = () =>{
         var nav;
         var body;
-        nav = document.getElementById("Navbar")
-        body = document.getElementById("buttonAndBody")
+        nav = document.getElementById("navbarContainer")
+        body = document.getElementById("bodyContainer")
         if (this.state.clicked == true){
             nav.style.width = "15%"
-            body.style.marginLeft = "19%"
-            this.setState({clicked: false, symbol: " < "})
+            body.style.width = "75%"
+            this.setState({clicked: false, symbol: " Close "})
         } else {
             nav.style.width = "0%"
             body.style.marginLeft = '0%'
+            body.style.width = "92%"
             nav.style.border = '0px'
-            this.setState({clicked: true, symbol: " > "})
+            this.setState({clicked: true, symbol: " Menu "})
         }
     }
 
     render(){
         return(
-            <div className="HideButton" >            
-                <button onClick={this.click} id="HideButton">{this.state.symbol}</button>
-            </div>
+            <button className="HideButton" onClick={this.click} id="HideButton">{this.state.symbol}</button>
         )
     }
 }
