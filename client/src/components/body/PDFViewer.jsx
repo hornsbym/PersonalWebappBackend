@@ -16,12 +16,13 @@ class PDFViewer extends Component {
         var viewer = document.getElementById("PDFViewer")
         viewer.style.width = "0px"
         viewer.style.height = "0px"
+        viewer.style.margins= "0px"
     }
 
     show = () => {
         var viewer = document.getElementById("PDFViewer")
         viewer.style.width = "100%"
-        viewer.style.height = "500px"
+        viewer.style.height = "30em"
     }
 
     render() {
