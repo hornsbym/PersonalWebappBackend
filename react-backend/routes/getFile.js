@@ -2,8 +2,6 @@ var express = require('express');
 var router = express.Router();
 const AWS = require('aws-sdk')
 
-////
-var nodemailer = require('nodemailer');
 
 
 router.post('/', function (req, res) {
@@ -21,33 +19,6 @@ router.post('/', function (req, res) {
   s3.getObject(params, function (err, data) {
     if (err) {
       console.log(err, err.stack)
-
-      ////
-
-      var transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-          user: 'mitchellrh78@gmail.com',
-          pass: 'Chloe*1226'
-        }
-      });
-      
-      var mailOptions = {
-        from: '"Website Error" <mitchellrh78@gmail.com>',
-        to: 'hornsbym19@outlook.com',
-        subject: 'From ' + req.body.sender,
-        text: err
-      };
-      
-      transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-      });
-
-      ////
     } 
     else {
       res.send(data.Body.toJSON()) 
