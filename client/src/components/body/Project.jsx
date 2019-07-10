@@ -16,7 +16,6 @@ class Project extends Component {
     }
 
     fetchPicture = (params, i) => {
-
         fetch('/getFile', params)
         .then(res => res.json())
         .then(data => {

@@ -16,7 +16,7 @@ class Body extends Component {
                 <PDFViewer/>
                 <Writing/>
                 <Contact/>
-                <EmailWidget/>
+                {/* <EmailWidget/> */}
             </div>
         )
     }
