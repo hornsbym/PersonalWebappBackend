@@ -1,5 +1,6 @@
 const express = require('express')
 const dotEnv = require("dotenv")
+const path = require("path");
 const cors = require('cors')
 const http = require('http')
 const AWS = require('aws-sdk')
@@ -26,6 +27,7 @@ const getGameNamesRoute = require("./routes/getGameNames")
 const getGamePhotosRoute = require("./routes/getGamePhotosByName")
 
 // Apply routes here
+app.use('/', express.static(path.join(__dirname, "build")))
 app.use('/getGameNames', getGameNamesRoute);
 app.use('/getGamePhotos', getGamePhotosRoute);
 
