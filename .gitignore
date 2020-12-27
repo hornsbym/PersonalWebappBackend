@@ -1,2 +1,2 @@
-client/
-express-app/node_modules/
+node_modules/
+.env
