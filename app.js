@@ -31,6 +31,6 @@ app.use('/', express.static(path.join(__dirname, "build")))
 app.use('/getGameNames', getGameNamesRoute);
 app.use('/getGamePhotos', getGamePhotosRoute);
 
-http.createServer(app).listen(3010, () => {
-    console.log("Listening on http://localhost:3010")
+http.createServer(app).listen(process.env.PORT, () => {
+    console.log(`Listening on http://localhost:${process.env.PORT}`)
 })
