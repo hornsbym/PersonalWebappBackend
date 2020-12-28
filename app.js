@@ -32,5 +32,5 @@ app.use('/getGameNames', getGameNamesRoute);
 app.use('/getGamePhotos', getGamePhotosRoute);
 
 http.createServer(app).listen(process.env.PORT, () => {
-    console.log(`Listening on http://localhost:${process.env.PORT}`)
+    console.log(`Listening on http://localhost:${process.env.PORT} HI TESTING UPDATE`)
 })
