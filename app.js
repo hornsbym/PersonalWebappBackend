@@ -25,11 +25,15 @@ app.use(cors())
 // Pull in routes here.
 const getGameNamesRoute = require("./routes/getGameNames")
 const getGamePhotosRoute = require("./routes/getGamePhotosByName")
+const postAddNewGameRoute = require("./routes/addNewGame")
+const postVerifyUserRoute = require("./routes/verifyUser")
 
 // Apply routes here
 app.use('/', express.static(path.join(__dirname, "build")))
 app.use('/getGameNames', getGameNamesRoute);
 app.use('/getGamePhotos', getGamePhotosRoute);
+app.use('/addNewGame', postAddNewGameRoute);
+app.use('/verifyUser', postVerifyUserRoute);
 
 http.createServer(app).listen(process.env.PORT, () => {
     console.log(`Listening on http://localhost:${process.env.PORT}`)
