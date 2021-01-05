@@ -17,7 +17,7 @@ router.post("/", upload.any(), (req, res) => {
     postFilesToS3(req.files, req.body.uniqueIdentifier)
     postGameInformation(req.body)
 
-    res.redirect("http://localhost:3001/admin/")
+    res.redirect(constants.REDIRECT_TO_CONSOLE)
 })
 
 /////////////////////////////////
