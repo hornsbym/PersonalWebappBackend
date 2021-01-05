@@ -35,6 +35,11 @@ app.use('/getGamePhotos', getGamePhotosRoute);
 app.use('/addNewGame', postAddNewGameRoute);
 app.use('/verifyUser', postVerifyUserRoute);
 
+// Allows us to go directly to React Router routes 
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './build', 'index.html'));
+});
+
 http.createServer(app).listen(process.env.PORT, () => {
     console.log(`Listening on http://localhost:${process.env.PORT}`)
 })
