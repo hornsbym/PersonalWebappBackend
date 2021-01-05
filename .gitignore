@@ -1,5 +1,5 @@
-node_modules/
-.env
-build/
-package-lock.json
-constants.js
+/node_modules/
+/.env
+/build/
+/package-lock.json
+/constants.js
