@@ -21,6 +21,6 @@ router.post("/", (res, req) => {
             console.log(error, error.stack)
         } else {
             console.log(data)
-        }
+        } 
     })
 })
