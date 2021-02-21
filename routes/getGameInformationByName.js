@@ -17,7 +17,7 @@ router.post("/", (res, req) => {
 
     s3.getObject((error, data) => {
         if (error) {
-            console.log("Error getting profile picture")
+            console.log("Error getting game info")
             console.log(error, error.stack)
         } else {
             console.log(data)

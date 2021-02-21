@@ -91,11 +91,15 @@ async function postFilesToS3(filesArray, uniqueIdentifier) {
 function postGameInformation(gameData) {
     let uniqueIdentifier = gameData.uniqueIdentifier
     let gameName = gameData.displayName
-    let descriptionParagraphs = (gameData.gameDescriptions).split(/\r?\n/)
+    let descriptionParagraphs = gameData.gameDescriptions
+    let aboutThisGameContent = gameData.gamePageDescription
+    let githubLink = gameData.githubLink
 
     let payload = {
         gameName: gameName,
-        gameDescriptionParagraphs: descriptionParagraphs
+        gameDescriptionParagraphs: descriptionParagraphs,
+        gamePageDescription: aboutThisGameContent,
+        githubLink:  githubLink
     }
 
     let params = {
